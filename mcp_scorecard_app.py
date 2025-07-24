@@ -8,7 +8,7 @@ import json
 
 # Set up OpenAI API key (Streamlit Cloud users: set this in Secrets)
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-st.write("🔑 Available secrets:", st.secrets)
+
 
 
 st.set_page_config(page_title="MCP Scorecard Generator", page_icon="🧠")

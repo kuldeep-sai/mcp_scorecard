@@ -6,8 +6,15 @@ import openai
 import pandas as pd
 import json
 
-# Set up OpenAI API key (Streamlit Cloud users: set this in Secrets)
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+# ✅ Safe check for secret presence
+if "OPENAI_API_KEY" in st.secrets:
+    st.success("✅ OPENAI_API_KEY found in secrets.")
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
+else:
+    st.error("❌ OPENAI_API_KEY is missing. Please add it in Streamlit Cloud → Manage App → Secrets.")
+    st.stop()
+
+
 
 
 

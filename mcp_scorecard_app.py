@@ -50,7 +50,7 @@ Webpage content:
 """
     prompt += content[:6000]  # Limit to 6000 characters
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3
